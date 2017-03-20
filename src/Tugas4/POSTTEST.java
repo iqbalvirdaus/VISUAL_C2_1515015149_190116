@@ -147,6 +147,8 @@ public class POSTTEST extends javax.swing.JFrame {
         PKonten.setBackground(new java.awt.Color(255, 255, 255));
         PKonten.setLayout(new java.awt.CardLayout());
 
+        PHome.setBackground(new java.awt.Color(51, 51, 51));
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/capil.PNG"))); // NOI18N
 
         jLabel37.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -159,21 +161,21 @@ public class POSTTEST extends javax.swing.JFrame {
             .addGroup(PHomeLayout.createSequentialGroup()
                 .addGroup(PHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PHomeLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel4))
-                    .addGroup(PHomeLayout.createSequentialGroup()
                         .addGap(123, 123, 123)
-                        .addComponent(jLabel37)))
-                .addContainerGap(106, Short.MAX_VALUE))
+                        .addComponent(jLabel37))
+                    .addGroup(PHomeLayout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel4)))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         PHomeLayout.setVerticalGroup(
             PHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PHomeLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(jLabel37)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel4)
-                .addGap(20, 20, 20))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         PKonten.add(PHome, "card2");
@@ -687,11 +689,11 @@ public class POSTTEST extends javax.swing.JFrame {
         POForm.setLayout(POFormLayout);
         POFormLayout.setHorizontalGroup(
             POFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 720, Short.MAX_VALUE)
         );
         POFormLayout.setVerticalGroup(
             POFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 482, Short.MAX_VALUE)
         );
 
         PKonten.add(POForm, "card4");
@@ -1119,9 +1121,9 @@ public class POSTTEST extends javax.swing.JFrame {
         TODesa.setText(this.TFKelurahan.getText());//TODesa diberikan nilai menggunakan methode setText yang isinya di ambil dari TFKelurahan dengan methode getText
         TOKota.setText(this.TFKota.getText());//TOKota diberikan nilai menggunakan methode setText yang isinya di ambil dari TFKota dengan methode getText
         TOPekerjaan.setText(this.TFPekerjaan.getText());//TOTanggal diberikan nilai menggunakan methode setText yang isinya di ambil dari TFTanggal dengan methode getText
-        TOAgama.setText(this.CBAgama.getSelectedItem().toString());//TOAgama diberikan nilai menggunakan methode setText yang isinya di ambil dari TFTanggal dengan methode getSelectItem karena combo box
-        TOStatus.setText(this.CBStatus.getSelectedItem().toString());//TOStatus diberikan nilai menggunakan methode setText yang isinya di ambil dari TFTanggal dengan methode getSelectItem karena combo box
-        TOGoldar.setText(this.CBGoldar.getSelectedItem().toString());//TOGoldar diberikan nilai menggunakan methode setText yang isinya di ambil dari TFTanggal dengan methode getSelectItem karena combo box
+        TOAgama.setText(this.CBAgama.getSelectedItem().toString());//TOAgama diberikan nilai menggunakan methode setText yang isinya di ambil dari CBAgama dengan methode getSelectItem karena combo box
+        TOStatus.setText(this.CBStatus.getSelectedItem().toString());//TOStatus diberikan nilai menggunakan methode setText yang isinya di ambil dari CBStatus dengan methode getSelectItem karena combo box
+        TOGoldar.setText(this.CBGoldar.getSelectedItem().toString());//TOGoldar diberikan nilai menggunakan methode setText yang isinya di ambil dari CBGoldar dengan methode getSelectItem karena combo box
         
         /*penyeleksian berdasarkan apa yang dipilih dari radio button*/
         if (RBWna.isSelected()) {//apabila radio button WNA yang terpilih maka :
