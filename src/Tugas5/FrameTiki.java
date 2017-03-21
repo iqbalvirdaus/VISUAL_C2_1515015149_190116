@@ -447,7 +447,7 @@ public class FrameTiki extends javax.swing.JFrame {
            jenis= this.RBExpress.getText();
            VDiskon =Float.valueOf(SliderDiskon.getValue());
            Total = 11500*(Float.valueOf(TFBerat.getText()))-((VDiskon/100)*11500);
-           uang = (Total/2);
+           uang = (Total*150/100);
         }
         TAStruck.setText("<x><x><x><x><x><x>=|STRUCK|<x><x><x><x><x><x>"+
                          "\nNAMA \t: "+Nama+
@@ -567,11 +567,11 @@ public class FrameTiki extends javax.swing.JFrame {
     private void TFNoHPCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_TFNoHPCaretUpdate
         // TODO add your handling code here:
         
-        if (TFNoHP.getText().length()==0 && !TFNoHP.getText().equals("A-Z")&& !TFNoHP.getText().equals("a-z")) {
+        if (TFNoHP.getText().length()==0 && !TFNoHP.getText().matches("[A-Z]")&& !TFNoHP.getText().matches("[a-z]")) {
             Bproses.setEnabled(false);
             
         }
-        else if (TFNoHP.getText().length()!=0) {
+        else if (TFNoHP.getText().length()!=0 && TFNoHP.getText().matches("[1-9]*") ) {
             Bproses.setEnabled(true);
         }
     }//GEN-LAST:event_TFNoHPCaretUpdate
