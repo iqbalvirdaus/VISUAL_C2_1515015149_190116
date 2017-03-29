@@ -147,6 +147,11 @@ public class FrameTiki extends javax.swing.JFrame {
                 TFBeratCaretUpdate(evt);
             }
         });
+        TFBerat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFBeratActionPerformed(evt);
+            }
+        });
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("KG");
@@ -154,8 +159,7 @@ public class FrameTiki extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Diskon");
 
-        SliderDiskon.setMajorTickSpacing(10);
-        SliderDiskon.setMinorTickSpacing(10);
+        SliderDiskon.setMajorTickSpacing(1);
         SliderDiskon.setPaintLabels(true);
         SliderDiskon.setPaintTicks(true);
         SliderDiskon.setSnapToTicks(true);
@@ -168,7 +172,7 @@ public class FrameTiki extends javax.swing.JFrame {
 
         LDiskon.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         LDiskon.setForeground(new java.awt.Color(0, 0, 0));
-        LDiskon.setText("0");
+        LDiskon.setText("0 %");
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Jenis Jasa");
@@ -201,7 +205,7 @@ public class FrameTiki extends javax.swing.JFrame {
         });
 
         PJenis.setBackground(new java.awt.Color(102, 102, 102));
-        PJenis.setLayout(new java.awt.GridLayout());
+        PJenis.setLayout(new java.awt.GridLayout(1, 0));
 
         buttonGroup1.add(RBReguler);
         RBReguler.setText("Reguler");
@@ -221,22 +225,22 @@ public class FrameTiki extends javax.swing.JFrame {
                     .addGroup(PKiriLayout.createSequentialGroup()
                         .addGroup(PKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PKiriLayout.createSequentialGroup()
-                                .addGroup(PKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
+                                .addGap(38, 38, 38)
+                                .addComponent(TFNoHP))
+                            .addGroup(PKiriLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TFNama)
-                                    .addComponent(TFNoHP)))
+                                .addComponent(TFNama))
                             .addGroup(PKiriLayout.createSequentialGroup()
                                 .addGroup(PKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel2)
                                     .addGroup(PKiriLayout.createSequentialGroup()
                                         .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(TFBerat, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TFBerat, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel4))
-                                    .addComponent(jLabel5)
                                     .addGroup(PKiriLayout.createSequentialGroup()
                                         .addGap(12, 12, 12)
                                         .addComponent(Bproses))
@@ -249,39 +253,41 @@ public class FrameTiki extends javax.swing.JFrame {
                     .addGroup(PKiriLayout.createSequentialGroup()
                         .addComponent(SliderDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LDiskon, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                        .addComponent(LDiskon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(46, 46, 46))))
         );
         PKiriLayout.setVerticalGroup(
             PKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PKiriLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TFNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(TFNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(PKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(TFNoHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(14, 14, 14)
                 .addGroup(PKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PKiriLayout.createSequentialGroup()
-                        .addGroup(PKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(TFBerat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SliderDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(LDiskon))
+                    .addGroup(PKiriLayout.createSequentialGroup()
+                        .addGroup(PKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TFBerat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(50, 50, 50)
+                        .addComponent(LDiskon)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
                 .addGap(11, 11, 11)
                 .addComponent(PJenis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Bproses)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
 
         PKanan.setBackground(new java.awt.Color(153, 153, 153));
@@ -320,6 +326,11 @@ public class FrameTiki extends javax.swing.JFrame {
                 BUlangMousePressed(evt);
             }
         });
+        BUlang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BUlangActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -334,14 +345,14 @@ public class FrameTiki extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BKeluar))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PKananLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BUlang)
-                .addGap(144, 144, 144))
             .addGroup(PKananLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(PKananLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(BUlang)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PKananLayout.setVerticalGroup(
             PKananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,15 +360,15 @@ public class FrameTiki extends javax.swing.JFrame {
                 .addGroup(PKananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PKananLayout.createSequentialGroup()
                         .addComponent(BKeluar)
-                        .addGap(0, 58, Short.MAX_VALUE))
+                        .addGap(0, 62, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PKananLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel8)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BUlang)
-                .addGap(53, 53, 53))
+                .addGap(59, 59, 59))
         );
 
         javax.swing.GroupLayout PDasarLayout = new javax.swing.GroupLayout(PDasar);
@@ -534,7 +545,7 @@ public class FrameTiki extends javax.swing.JFrame {
     }//GEN-LAST:event_BprosesComponentHidden
     /* EVENT HANDLING 7*/
     private void BUlangMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BUlangMousePressed
-        // TODO add your handling code here:
+        // TODO add your handling code here:   
         //SliderDiskon.setMinimum(0);
         TFNama.setText("");
         TFNoHP.setText("");
@@ -555,7 +566,7 @@ public class FrameTiki extends javax.swing.JFrame {
     /* EVENT HANDLING 8*/
     private void TFNamaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_TFNamaCaretUpdate
         // TODO add your handling code here:
-        if (TFNama.getText().length()==0) {
+        if (TFNama.getText().length()==0 && TFBerat.getText().length()!=0) {
             Bproses.setEnabled(false);
         }
         else if (TFNama.getText().length()!=0) {
@@ -578,7 +589,6 @@ public class FrameTiki extends javax.swing.JFrame {
 
     private void TFBeratCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_TFBeratCaretUpdate
         // TODO add your handling code here:
-        
         //VBerat= Float.valueOf(TFBerat.getText());
         Integer B;
         B =Integer.valueOf(TFBerat.getText());
@@ -601,6 +611,14 @@ public class FrameTiki extends javax.swing.JFrame {
         BKeluar.setForeground(Color.BLACK);
         BKeluar.setBackground(Color.WHITE );
     }//GEN-LAST:event_BKeluarMouseExited
+
+    private void BUlangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BUlangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BUlangActionPerformed
+
+    private void TFBeratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFBeratActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TFBeratActionPerformed
    
     /**
      * @param args the command line arguments
