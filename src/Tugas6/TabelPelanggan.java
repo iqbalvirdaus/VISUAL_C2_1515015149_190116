@@ -249,6 +249,10 @@ public class TabelPelanggan extends javax.swing.JFrame {
         PDasarLayout.setHorizontalGroup(
             PDasarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PDasarLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
             .addGroup(PDasarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PDasarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,10 +261,6 @@ public class TabelPelanggan extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PDasarLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
         );
         PDasarLayout.setVerticalGroup(
             PDasarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,9 +270,9 @@ public class TabelPelanggan extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(PGrid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         BKeluar.setText("X");
@@ -355,6 +355,9 @@ public class TabelPelanggan extends javax.swing.JFrame {
         if (pilihan==0) {
             int baris = TPelanggan.getSelectedRow();
         model.removeRow(baris);
+        TFNama.setText("");
+        TFNotelp.setText("");
+        CBKotaAsal.setSelectedIndex(0);
         }
     }//GEN-LAST:event_BHapusActionPerformed
 
